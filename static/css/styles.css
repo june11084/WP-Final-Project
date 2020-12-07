@@ -1,0 +1,43 @@
+
+body{
+    background-color: #fafafa;
+}
+
+.button-col {
+    text-align: right;
+}
+
+.task-col {
+    text-align: left;
+}
+
+.task-row {
+    background-color:white;
+    border: 1px solid silver;
+    border-radius: 0.25rem;
+    padding: 10px;
+    margin: 10px;
+}
+
+.task-delete {
+    color:#fe6993;
+    background-color: rgba(254, 105, 147, 0.1);
+    border-radius: 3px;
+    padding: 0.2em;
+    line-height: 2em;
+}
+
+.task-row-gray {
+    background-color: #eeeeee;
+}
+
+.task-text-strikeThrough {
+    text-decoration: line-through;
+    color: gray;
+}
+
+@media screen and (max-width: 768px) {
+    .button-col {
+        text-align: left;
+    }
+}
