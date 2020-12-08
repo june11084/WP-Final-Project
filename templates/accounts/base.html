@@ -5,8 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+<h1>My site</h1>
+<a href="{% url 'index' %}">Home</a>
+<a href="{% url 'register' %}">Register</a>
+<hr>
 {% block body %}
-
 {% endblock %}
 
 </body>
