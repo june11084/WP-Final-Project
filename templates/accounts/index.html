@@ -2,6 +2,10 @@
 
 {% block body %}
 
-    <h2>Index page</h2>
-    <p>Welcome User</p>
+    <h2>Index</h2>
+    {% if user.is_authenticated %}
+    <p>Welcome {{ user.username }}</p>
+    {% else %}
+        <p>Welcome visitor</p>
+    {% endif %}
 {% endblock %}
