@@ -48,7 +48,7 @@ def login_view(request):
             user = form.get_user()
             login(request, user)
             # redirect the user to index page
-            return redirect('index')
+            return redirect('Login_index')
     else:
         # Create an empty instance of Django's AuthenticationForm to generate the necessary html on the template.
         form = AuthenticationForm()
@@ -59,4 +59,4 @@ def logout_view(request):
     # This is the method to logout the user
     logout(request)
     # redirect the user to index page
-    return redirect('index')
+    return redirect('Login_index')

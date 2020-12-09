@@ -1,0 +1,26 @@
+{% extends 'yelp/base.html' %}
+{% load static %}
+{% block body %}
+
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <h1 class="display-4 text-center">Yelp API</h1>
+
+            <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter a search term e.g., pizza" name="search_term">
+                    <input type="text" class="form-control" placeholder="Enter a location e.g., Boston" name="location">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit">SEARCH</button>
+                    </div>
+            </div>
+
+            <div id="results"></div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/yelp.js' %}"></script>
+{% endblock %}
