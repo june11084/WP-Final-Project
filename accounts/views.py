@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from .models import Accounts
 
 
 # Create your views here.
@@ -18,7 +19,9 @@ def register_view(request):
             return redirect('index')
     else:
         form = UserCreationForm()
-
+    #ERROR. Attempting to move information from UserCreationForm to class Accounts in models.py
+   # Accounts.objects.create(username=UserCreationForm.username)
+   # Accounts.objects.create(password=UserCreationForm.password1)
     context = {'form': form}
     return render(request, 'accounts/register.html', context)
 
