@@ -48,7 +48,7 @@ def login_view(request):
             user = form.get_user()
             login(request, user)
             # redirect the user to index page
-            return redirect('Login_index')
+            return redirect('index')
     else:
         # Create an empty instance of Django's AuthenticationForm to generate the necessary html on the template.
         form = AuthenticationForm()

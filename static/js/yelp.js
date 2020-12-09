@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('button').click(function () {
-        alert("yelp reached")
+        alert("restaurants reached")
         // Clear before adding in case the user clicks the button twice
         $('#results').empty();
 

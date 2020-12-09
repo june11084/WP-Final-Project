@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 # Create your views here.
@@ -7,5 +8,6 @@ import requests
 
 
 # Version-1: This version makes an AJAX request in JavaScript
+@login_required(login_url='login')
 def index(request):
-    return render(request, 'yelp/index.html')
+    return render(request, 'restaurants/index.html')
