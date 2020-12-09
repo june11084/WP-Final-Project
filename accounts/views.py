@@ -12,19 +12,15 @@ def index(request):
 
 
 def register_view(request):
+    # This function renders the registration form page and create a new user based on the form data
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('login')
     else:
         form = UserCreationForm()
-    #ERROR. Attempting to move information from UserCreationForm to class Accounts in models.py
-   # Accounts.objects.create(username=UserCreationForm.username)
-   # Accounts.objects.create(password=UserCreationForm.password1)
-    context = {'form': form}
-    return render(request, 'accounts/register.html', context)
-
+    return render(request, 'accounts/register.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':
