@@ -77,7 +77,7 @@ $(document).ready(function () {
                             `                                            <p class="card-text text-muted">${reviewCount} reviews</p>\n` +
                             '                                        </div>\n' +
                             '                                    </div>\n' +
-                            `                                    <a href= "#" class="card-text">${address} <br>${city}, ${zipcode}</a>\n` +
+                            `                                    <a href= "https://www.google.com/maps/search/?api=1&query=${address+city+zipcode}" target="_blank" class="card-text">${address} <br>${city}, ${zipcode}</a>\n` +
                             `                                    <p class="card-text text-muted">Phone: ${phone}</p>\n` +
                             `                                      <div id="transaction-${i}"></div>\n` +
                             '                                </div>\n' +
