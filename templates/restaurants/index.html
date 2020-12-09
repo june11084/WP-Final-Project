@@ -7,11 +7,38 @@
             <h1 class="display-4 text-center">Search</h1>
 
             <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Enter a search term e.g., pizza" name="search_term">
-                    <input type="text" class="form-control" placeholder="Enter a location e.g., Boston" name="location">
+                    <input type="text" class="form-control" id="searchText" placeholder="Enter a search term e.g., pizza" name="search_term">
+                    <input type="text" class="form-control" id="searchLocation" placeholder="Enter a location" name="location">
                     <div class="input-group-append">
-                        <button class="btn btn-success" type="submit">SEARCH</button>
+                        <button class="btn btn-success" id="searchButton" type="submit">Search</button>
                     </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-info" id="searchMapButton" type="submit" data-toggle="modal" data-target="#mapModal"><i class="fas fa-map-marked-alt"></i> Map Search</button>
+                    </div>
+            </div>
+
+            <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Maps</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe
+                              height="450"
+                              frameborder="0" style="border:0"
+                              src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC1KKb5alQqxLYGg-p9moeCuE5mL_-N5P0
+                                &q=restaurants,NewBritain+CT" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                    </div>
+                </div>
             </div>
 
             <div id="results"></div>
@@ -22,5 +49,5 @@
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'js/yelp.js' %}"></script>
+    <script src="{% static 'js/restaurant.js' %}"></script>
 {% endblock %}

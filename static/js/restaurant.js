@@ -1,7 +1,14 @@
 $(document).ready(function () {
-    $('button').click(function () {
-        alert("restaurants reached")
+
+    $('#searchMapButton').click(function () {
+        let name = $('#searchText').val()
+        let location = $('#searchLocation').val()
+        $('iframe').attr('src', `https://www.google.com/maps/embed/v1/search?key=AIzaSyC1KKb5alQqxLYGg-p9moeCuE5mL_-N5P0&q=${name},${location}`)
+    })
+
+    $('#searchButton').click(function () {
         // Clear before adding in case the user clicks the button twice
+
         $('#results').empty();
 
         // Get the search term and location from the input elements
@@ -19,7 +26,7 @@ $(document).ready(function () {
             data: {'term': searchTerm, 'location': location},
             method: 'GET',
             headers: {
-                'Authorization':'Bearer R2gFPcNg1KkOib427cLS6AoTewOjhyBG25hO02kJA-kg5JG4WUSFQD-w0BP588FkVFpbPliemjEjs_NYXUjDfiBNX_hAmGz78tD47dB0XF39AA99irMsBM1UGfzCX3Yx',
+                'Authorization':'Bearer GO5J66671WgL07Q7_w5V6SdCkwJChInkirHbA1uknRsT4ec-C0pBpDaaMP8Ke5HFWxjkcP6WSD-16EJTnfBoWNbV8EAEjeUHAghQYcSY-oCJI1xFIIFXoEc_o9qtWnYx',
             },
             success: function(data) {
                 //console.log(data);
@@ -70,7 +77,7 @@ $(document).ready(function () {
                             `                                            <p class="card-text text-muted">${reviewCount} reviews</p>\n` +
                             '                                        </div>\n' +
                             '                                    </div>\n' +
-                            `                                    <p class="card-text text-muted">${address} <br>${city}, ${zipcode}</p>\n` +
+                            `                                    <a href= "#" class="card-text">${address} <br>${city}, ${zipcode}</a>\n` +
                             `                                    <p class="card-text text-muted">Phone: ${phone}</p>\n` +
                             `                                      <div id="transaction-${i}"></div>\n` +
                             '                                </div>\n' +
